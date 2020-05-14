@@ -102,3 +102,30 @@ Aqui es donde va el boton y tambien es afecado cuando se clickea el botón
 #navbar a:hover {
     color: crimson;
 }
+
+#Form_login {
+    padding: 200px 15px;
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+#Form_login input {
+    margin-top: 5px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#Form_login button {
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 25px;
+    margin-left: 75px;
+}
+
+#Form_login button:hover {
+    cursor: pointer;
+    background: grey;
+}

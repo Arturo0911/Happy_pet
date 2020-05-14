@@ -1,0 +1,69 @@
+<div id="form_signup">
+    <form action="/auth/signup" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="inputCedula">Cedula</label>
+                <input required type="text" class="form-control" id="inputCedula" name="ced" autofocus>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputNombre">Nombres</label>
+                <input required type="text" class="form-control" id="inputNombre" name="name">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputApellido">Apellidos</label>
+                <input required type="text" class="form-control" id="inputApellido" name="lname">
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="inputFoto">Imagen</label>
+                <div class="custom-file">
+                    <input required type="file" class="custom-file-input" id="inputGroupFile03"
+                        aria-describedby="inputGroupFileAddon03" name="image">
+                    <label class="custom-file-label" for="inputGroupFile03">Selecciona la imagen</label>
+                </div>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputTelefono">Email</label>
+                <input required type="text" class="form-control" id="inputEmail4" name="email" name="email">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputTelefono">Telefono</label>
+                <input required type="text" class="form-control" id="inputTelefono" name="phone">
+            </div>
+            <div class="form-group col-md-7">
+                <label for="inputAddress">Dirección</label>
+                <input required type="text" class="form-control" id="inputAddress"
+                    placeholder="calle, manzana y/o villa" name="address">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <label for="inputJornada">Jornada</label>
+                <select id="inputJornada" class="form-control" name="turno">
+                    <option selected>Matutino</option>
+                    <option>Vespertino</option>
+                    <option>Nocturno</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputApartment">Departamento</label>
+                <select id="inputApartment" class="form-control" name="apartment">
+                    <option selected>Admnistrativo</option>
+                    <option>Contable</option>
+                    <option>Bodega</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputUser">Usuario</label>
+                <input required type="text" class="form-control" id="inputUser" name="user" autofocus>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputPass">Password</label>
+                <input required type="password" class="form-control" id="inputPass" name="password">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+
+
+</div>
