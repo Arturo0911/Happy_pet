@@ -1,0 +1,104 @@
+/*
+Para generalizar usamos el *{}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar {
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    left: -200px;
+    transition: all 600ms;
+}
+
+
+/*
+ Esta es la sección donde va la barra la teral, agregamos el ul y li para que se denote que vamos a incluir todos sus efectos
+ a esta seccion, cabe recalcar que se agrega sin usar la coma, con coma es cuando nos referimos a una clase.
+*/
+
+#sidebar ul li {
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 25px 15px;
+    border-bottom: 1px solid black;
+}
+
+#sidebar a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+#sidebar li:hover {
+    color: cornflowerblue;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+
+/*
+aqui nos referimos a la activacion de la clase para que se mueva 200px hacia la derecha
+*/
+
+#sidebar.active {
+    left: 0px;
+}
+
+
+/*
+Aqui es donde va el boton y tambien es afecado cuando se clickea el botón
+*/
+
+#toggle_button {
+    padding-top: 15px;
+    margin-left: 0px;
+    transition: all 600ms;
+}
+
+#toggle_button.active {
+    margin-left: 200px;
+}
+
+#navbar {
+    background: #808080;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3fada8, #808080);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3fada8, #808080);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 20px;
+    border: solid 1px black;
+    padding-bottom: 20px;
+}
+
+#navbar li {
+    display: inline;
+    padding-left: 50px;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#navbar ul {
+    text-align: left;
+    padding-top: 15px;
+}
+
+#navbar a:hover {
+    color: crimson;
+}
