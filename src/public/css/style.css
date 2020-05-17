@@ -135,32 +135,6 @@
     margin-bottom: 15px;
 }
 
-#Message.active {
-    opacity: 0;
-}
-
-#Message em {
-    padding: 10px;
-    margin: auto;
-    font-size: 25px;
-}
-
-#Message span {
-    height: 20px;
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#Message span:hover {
-    color: black;
-}
-
 #div_alert span {
     height: 20px;
     margin-left: 15px;

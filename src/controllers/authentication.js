@@ -11,6 +11,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const pool = require('../connections/database');
 const { encrypPassword, UnionPasswords, createRandomNumber } = require('../connections/password');
 
+
+const { ItsNotLoggedIn, ItsLoggedIn } = require('./module');
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -19,10 +21,10 @@ passport.deserializeUser(async(id, done) => {
     done(null, rows[0]);
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', ItsNotLoggedIn, (req, res) => {
     res.render('aut/signin');
 });
-router.post('/login', async(req, res, next) => {
+router.post('/login', ItsNotLoggedIn, async(req, res, next) => {
     passport.authenticate('local_login', {
         successRedirect: '/main/',
         failureRedirect: '/auth/login',
@@ -40,16 +42,13 @@ passport.use('local_login', new LocalStrategy({
         const user = filas[0];
         const comparePassword = await UnionPasswords(password, user.password);
         if (comparePassword) {
-            done(null, user);
+            done(null, user, req.flash('success', 'Bienvenido sr.' + user.name));
         } else {
-            done(null, false);
-            console.log('clave incorrecta');
-
+            done(null, false, req.flash('error', 'incorrect password'));
         }
     } else {
 
-        console.log('usuarios incorrecto...');
-        done(null, false);
+        done(null, false, req.flash('error', 'usuario incorrecto'));
 
     }
 }));
@@ -60,11 +59,11 @@ passport.use('local_login', new LocalStrategy({
 
 
 
-router.get('/signup', (req, res) => {
+router.get('/signup', ItsNotLoggedIn, (req, res) => {
     res.render('aut/signup');
 });
 
-router.post('/signup', passport.authenticate('local_signup', {
+router.post('/signup', ItsNotLoggedIn, passport.authenticate('local_signup', {
     successRedirect: '/auth/login',
     failureRedirect: '/auth/signup',
     failureFlash: true
@@ -110,6 +109,9 @@ passport.use('local_signup', new LocalStrategy({
 
 
 
-
+router.get('/logout', ItsLoggedIn, (req, res) => {
+    req.logOut();
+    res.redirect('/auth/login');
+});
 
 module.exports = router;
