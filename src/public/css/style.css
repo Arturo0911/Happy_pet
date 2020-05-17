@@ -125,3 +125,54 @@
     padding-top: 50px;
     margin-left: 200px;
 }
+
+#Message {
+    background: #f44336;
+    text-align: center;
+    color: white;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+#Message.active {
+    opacity: 0;
+}
+
+#Message em {
+    padding: 10px;
+    margin: auto;
+    font-size: 25px;
+}
+
+#Message span {
+    height: 20px;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#Message span:hover {
+    color: black;
+}
+
+#div_alert span {
+    height: 20px;
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#div_alert span:hover {
+    color: darkgray;
+}
