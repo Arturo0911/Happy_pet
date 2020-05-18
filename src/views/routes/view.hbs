@@ -1,0 +1,18 @@
+<div class="container p-4">
+    {{#if renderizado}}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../public/img/img_pet/{{renderizado.image}}" class="card-img" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre de la mascota: <strong><em>{{renderizado.pet_name}}</em></strong></h5>
+                        <p class="card-text">{{renderizado.motivo_visita}}</p>
+                        <p class="card-text"><small class="text-muted">{{renderizado.date_query}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</div>

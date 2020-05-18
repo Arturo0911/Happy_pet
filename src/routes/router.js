@@ -28,7 +28,8 @@ router.post('/logger', async(req, res) => {
         email: req.body.email,
         image: file_name + extname,
         address: req.body.address,
-        phone: req.body.phone
+        phone: req.body.phone,
+        motivo_visita: req.body.motivo_visita
     };
 
     if (extname === '.png' || extname === '.jpg' || extname === '.jpeg' || extname === '.gif') {
@@ -49,6 +50,26 @@ router.get('/state', ItsLoggedIn, async(req, res) => {
     const datas = await pool.query('SELECT * FROM clients');
     res.render('routes/state', { resultado: datas });
 });
+
+router.get('/view/:id', async(req, res) => {
+    const { id } = req.params;
+    const request = await pool.query('SELECT * FROM clients WHERE id =?', [id]);
+    res.render('routes/view', { renderizado: request[0] });
+});
+
+
+
+/**
+ * to edit every card
+ */
+router.get('/edit/:id', async(req, res) => {
+    const { id } = req.params;
+    //console.log('parametros: ', req.params);
+    const edicion = await pool.query('SELECT * FROM clients WHERE id=?', [id]);
+    res.render('routes/edit', { editar: edicion[0] });
+});
+
+
 
 
 /*router.get('/', ItsLoggedIn, (req, res) => {

@@ -15,8 +15,6 @@ pool.getConnection((err, connection) => {
     if (connection) {
         connection.release();
     }
-    //console.log('connection was successfuly with database');
-
     return;
 });
 

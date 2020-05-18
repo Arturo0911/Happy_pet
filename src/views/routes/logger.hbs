@@ -13,7 +13,7 @@
                 <label for="inputNombre">Nombbre de la máscota</label>
                 <input required type="text" class="form-control" id="inputNombre" name="pet_name">
             </div>
-            
+
             <div class="form-group col-md-5">
                 <label for="inputFoto">Imagen</label>
                 <div class="custom-file">
@@ -35,7 +35,15 @@
                 <input required type="text" class="form-control" id="inputAddress"
                     placeholder="calle, manzana y/o villa" name="address">
             </div>
+            <div class="form-group col-md-10">
+                <label for="inputAddress">Motivo de la visita</label>
+                <textarea name="motivo_visita" class="form-control" cols="30" rows="10"
+                    placeholder="indique el motivo de la visita"></textarea>
+            </div>
         </div>
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <div class="form-group col-md-10">
+            <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        </div>
+
     </form>
 </div>
