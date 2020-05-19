@@ -1,35 +1,41 @@
 <div class="container p-4 mx-auto">
-    <form action="/main/logger" method="POST" enctype="multipart/form-data">
-        {{#if editar}}
+    {{#if editar}}
+        <form action="/main/edit" method="POST">
+            
             <div class="form-row">
                 <div class="form-group col-md-10">
                     <label for="inputCedula">Cedula</label>
-                    <input required type="text" class="form-control" id="inputCedula" name="ced" autofocus value="{{editar.ced}}">
+                    <input required readonly="readonly" type="text" class="form-control" id="inputCedula" name="ced" autofocus
+                        value="{{editar.ced}}">
                 </div>
                 <div class="form-group col-md-7">
                     <label for="inputNombre">Nombres</label>
-                    <input required type="text" class="form-control" id="inputNombre" name="fullname" value="{{editar.fullname}}">
+                    <input required type="text" class="form-control" id="inputNombre" name="fullname"
+                        value="{{editar.fullname}}">
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputNombre">Nombbre de la máscota</label>
-                    <input required type="text" class="form-control" id="inputNombre" name="pet_name"value="{{editar.pet_name}}">
+                    <label for="inputNombre">Nombre de la máscota</label>
+                    <input readonly="readonly" required type="text" class="form-control" id="inputNombre" name="pet_name"
+                        value="{{editar.pet_name}}">
                 </div>
 
-                <div class="form-group col-md-5">
-                    <label for="inputFoto">Imagen</label>
-                    <div class="custom-file">
-                        <input required type="file" class="custom-file-input" id="inputGroupFile03"
-                            aria-describedby="inputGroupFileAddon03" name="image">
-                        <label class="custom-file-label" for="inputGroupFile03">Imagen de la mascota</label>
-                    </div>
-                </div>
+                <!--<div class="form-group col-md-5">
+                        <label for="inputFoto">Imagen</label>
+                        <div class="custom-file">
+                            <input required type="file" class="custom-file-input" id="inputGroupFile03"
+                                aria-describedby="inputGroupFileAddon03" name="image">
+                            <label class="custom-file-label" for="inputGroupFile03">Imagen de la mascota</label>
+                        </div>
+                    </div>-->
                 <div class="form-group col-md-5">
                     <label for="inputTelefono">Email</label>
-                    <input required type="text" class="form-control" id="inputEmail4" name="email" name="email" value="{{editar.email}}" >
+                    <input required type="text" class="form-control" id="inputEmail4" name="email" name="email"
+                        value="{{editar.email}}">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputTelefono">Telefono</label>
-                    <input required type="text" class="form-control" id="inputTelefono" name="phone" value="{{editar.phone}}">
+                    <input required type="text" class="form-control" id="inputTelefono" name="phone"
+                        value="{{editar.phone}}">
                 </div>
                 <div class="form-group col-md-7">
                     <label for="inputAddress">Dirección</label>
@@ -45,6 +51,7 @@
             <div class="form-group col-md-10">
                 <button type="submit" class="btn btn-success btn-block">Editar</button>
             </div>
-        {{/if}}
-    </form>
+            
+        </form>
+    {{/if}}
 </div>

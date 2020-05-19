@@ -150,3 +150,22 @@
 #div_alert span:hover {
     color: darkgray;
 }
+
+.container_visit {
+    margin-left: 100px;
+}
+
+.container_visit h3 {
+    margin-left: 240px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#btn_agendar {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#btn_agendar img {
+    padding-right: 15px;
+}

@@ -69,18 +69,37 @@ router.get('/edit/:id', async(req, res) => {
     res.render('routes/edit', { editar: edicion[0] });
 });
 
+router.post('/edit', async(req, res) => {
+    const cuerpo = req.body;
+    const data = await pool.query(`SELECT id FROM clients WHERE pet_name = '${cuerpo.pet_name}' and ced = '${cuerpo.ced}'`);
+    const { id } = data[0];
+    await pool.query('UPDATE clients set? WHERE id =?', [cuerpo, id]);
+    req.flash('success', 'Datos actualizados correctamente');
+    res.redirect('/main/state');
+});
 
 
+
+// to send messages outside the login
+router.get('/msn', (req, res) => {
+    res.render('routes/msn');
+});
+
+
+
+/**
+ * asign visit to home
+ */
+router.get('/visit', ItsLoggedIn, (req, res) => {
+    res.render('routes/visit');
+});
+
+router.post('/visit', ItsLoggedIn, (req, res) => {
+    res.redirect('main/state');
+    //res.render('routes/visit');
+});
 
 /*router.get('/', ItsLoggedIn, (req, res) => {
-    res.render('routes/index');
-});
-
-router.get('/', ItsLoggedIn, (req, res) => {
-    res.render('routes/index');
-});
-
-router.get('/', ItsLoggedIn, (req, res) => {
     res.render('routes/index');
 });
 
