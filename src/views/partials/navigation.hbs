@@ -13,7 +13,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
-            
+
             <li class="nav-item dropdown" id="Items_dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -27,20 +27,32 @@
                 </div>
             </li>
             {{#if user}}
-                <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1" >Stock</a>
+                <li class="nav-item dropdown" id="Items_dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Personal
+                    </a>
+                    <div id="Dropdown_links" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/auth/signup">Agregar nuevo personal</a>
+                        <a class="dropdown-item" href="/main/msn">Escríbenos para cualquier consulta</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/main/state" tabindex="-1" >States</a>
+                    <a class="nav-link " href="#" tabindex="-1">Stock</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1" >Messagges</a>
+                    <a class="nav-link " href="/main/state" tabindex="-1">States</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/main/visit" tabindex="-1" >Request</a>
+                    <a class="nav-link " href="#" tabindex="-1">Messagges</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1" >Others</a>
+                    <a class="nav-link " href="/main/visit" tabindex="-1">Request</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1">Others</a>
                 </li>
 
                 <li class="nav-item">

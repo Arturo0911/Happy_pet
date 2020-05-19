@@ -79,6 +79,7 @@ class App {
     routes() {
         this.app.use('/main', require('./routes/router'));
         this.app.use('/auth', require('./controllers/authentication'));
+        this.app.use('/pers', require('./routes/personal'));
     }
 
     /**
