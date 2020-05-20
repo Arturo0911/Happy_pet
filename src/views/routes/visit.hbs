@@ -1,63 +1,73 @@
 <div class="container p-4 ">
     <div class="container_visit">
         <h3>Solicitud de visitas a domicilio</h3>
-        <form action="/main/visit" method="POST" enctype="multipart/form-data">
-            <div class="form-row">
-                <div class="form-group col-md-10">
-                    <label for="inputCedula">Cedula</label>
-                    <input required type="text" class="form-control" id="inputCedula" name="ced" autofocus>
-                </div>
-                <div class="form-group col-md-7">
-                    <label for="inputNombre">¿Quién solicita la visita?</label>
-                    <input required type="text" class="form-control" id="inputNombre" name="fullname">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputNombre">Nombre de la máscota</label>
-                    <input required type="text" class="form-control" id="inputNombre" name="pet_name">
-                </div>
-
-                <!--<div class="form-group col-md-5">
-                    <label for="inputFoto">Imagen</label>
-                    <div class="custom-file">
-                        <input required type="file" class="custom-file-input" id="inputGroupFile03"
-                            aria-describedby="inputGroupFileAddon03" name="image">
-                        <label class="custom-file-label" for="inputGroupFile03">Selecciona la imagen</label>
+        {{#if disponibilidad}}
+            <form action="/main/visit" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="inputCedula">Cedula</label>
+                        <input required type="text" class="form-control" id="inputCedula" name="ced" autofocus>
                     </div>
-                </div>-->
-                <div class="form-group col-md-4">
-                    <label for="inputTelefono">Email</label>
-                    <input required type="text" class="form-control" id="inputEmail4" name="email" name="email">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputTelefono">Telefono</label>
-                    <input required type="text" class="form-control" id="inputTelefono" name="phone">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputApartment">Asignar médico</label>
-                    <select id="inputApartment" class="form-control" name="apartment">
-                        <option selected>Medico 1</option>
-                        <option>Medico 2</option>
-                        <option>Medico 3</option>
-                    </select>
+                    <div class="form-group col-md-7">
+                        <label for="inputNombre">¿Quién solicita la visita?</label>
+                        <input required type="text" class="form-control" id="inputNombre" name="fullname">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputNombre">Nombre de la máscota</label>
+                        <input required type="text" class="form-control" id="inputNombre" name="pet_name">
+                    </div>
 
+                    <!--<div class="form-group col-md-5">
+                        <label for="inputFoto">Imagen</label>
+                        <div class="custom-file">
+                            <input required type="file" class="custom-file-input" id="inputGroupFile03"
+                                aria-describedby="inputGroupFileAddon03" name="image">
+                            <label class="custom-file-label" for="inputGroupFile03">Selecciona la imagen</label>
+                        </div>
+                    </div>-->
+                    <div class="form-group col-md-4">
+                        <label for="inputTelefono">Email</label>
+                        <input required type="text" class="form-control" id="inputEmail4" name="email" name="email">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTelefono">Telefono</label>
+                        <input required type="text" class="form-control" id="inputTelefono" name="phone">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputApartment">Asignar médico</label>
+                        <select id="inputApartment" class="form-control" name="apartment">
+                            {{#each personal_medico}}
+                                <option selected>{{name}}</option>
+                            {{/each}}
+                        </select>
+
+                    </div>
+                    <div class="form-group col-md-7">
+                        <label for="inputAddress">Dirección</label>
+                        <input required type="text" class="form-control" id="inputAddress"
+                            placeholder="calle, manzana y/o villa" name="address">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputAddress">Horarios dispobibles</label>
+                        <select id="inputApartment" class="form-control" name="apartment">
+                            {{#each disponibilidad}}
+                                <option selected>{{rango}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <label for="inputAddress">Motivo de la visita</label>
+                        <textarea name="motivo_visita" class="form-control" cols="30" rows="10"
+                            placeholder="indique el motivo de la visita"></textarea>
+                    </div>
                 </div>
                 <div class="form-group col-md-10">
-                    <label for="inputAddress">Dirección</label>
-                    <input required type="text" class="form-control" id="inputAddress"
-                        placeholder="calle, manzana y/o villa" name="address">
+                    <button id="btn_agendar" type="submit" class="btn btn-warning"><img
+                            src="../../public/img/icons/transportation.png" alt="">Agendar</button>
                 </div>
-                <div class="form-group col-md-10">
-                    <label for="inputAddress">Motivo de la visita</label>
-                    <textarea name="motivo_visita" class="form-control" cols="30" rows="10"
-                        placeholder="indique el motivo de la visita"></textarea>
-                </div>
-            </div>
-            <div class="form-group col-md-10">
-                <button id="btn_agendar" type="submit" class="btn btn-warning"><img
-                        src="../../public/img/icons/transportation.png" alt="">Agendar</button>
-            </div>
 
-        </form>
+            </form>
+        {{/if}}
     </div>
 
 </div>

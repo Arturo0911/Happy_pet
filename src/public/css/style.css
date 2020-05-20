@@ -6,6 +6,7 @@
 }
 
 #sidebar {
+    padding-top: 30px;
     background: #151719;
     position: fixed;
     width: 200px;

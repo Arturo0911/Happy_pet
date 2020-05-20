@@ -90,8 +90,11 @@ router.get('/msn', (req, res) => {
 /**
  * asign visit to home
  */
-router.get('/visit', ItsLoggedIn, (req, res) => {
-    res.render('routes/visit');
+router.get('/visit', ItsLoggedIn, async(req, res) => {
+    const horarios = await pool.query('SELECT * FROM horarios_visitas WHERE disponibilidad=1');
+    const medicos = await pool.query(`SELECT * FROM employees WHERE apartment = 'Medico'`)
+
+    res.render('routes/visit', { disponibilidad: horarios, personal_medico: medicos });
 });
 
 router.post('/visit', ItsLoggedIn, (req, res) => {

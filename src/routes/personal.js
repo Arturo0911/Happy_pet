@@ -30,7 +30,10 @@ router.post('/login', async(req, res) => {
 });
 
 
-
+router.get('/status', async(req, res) => {
+    const visitas = await pool.query('SELECT * FROM asig_visitas');
+    res.render('personal/status', { control_visitas: visitas });
+});
 
 
 
