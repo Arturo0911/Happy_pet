@@ -170,3 +170,23 @@
 #btn_agendar img {
     padding-right: 15px;
 }
+
+.box_btn {
+    margin-top: 10px;
+}
+
+.box_btn a {
+    width: 100px;
+    height: 30px;
+}
+
+.box_btn a:hover {
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+    transition: all 200ms;
+}
+
+.form_status {
+    margin-left: 125px;
+}

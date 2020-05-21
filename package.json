@@ -22,7 +22,9 @@
         "multer": "^1.4.2",
         "mysql": "^2.18.1",
         "passport": "^0.4.1",
-        "passport-local": "^1.0.0"
+        "passport-local": "^1.0.0",
+        "timeago.js": "^4.0.2",
+        "timeagojs": "^1.0.0"
     },
     "devDependencies": {
         "nodemon": "^2.0.3"

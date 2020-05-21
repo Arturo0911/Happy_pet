@@ -21,18 +21,43 @@ router.get('/schedule', (req, res) => {
 
 // to login medical personal
 // i mustb create a new login for medical personal
-router.get('/login', (req, res) => {
+/*router.get('/login', (req, res) => {
     res.render('personal/login');
 });
 
 router.post('/login', async(req, res) => {
     res.send('ok')
-});
+});*/
 
 
 router.get('/status', async(req, res) => {
-    const visitas = await pool.query('SELECT * FROM asig_visitas');
+    const visitas = await pool.query(`SELECT * FROM asig_visitas WHERE status_visita =  ${1}`);
     res.render('personal/status', { control_visitas: visitas });
+});
+
+
+router.get('/close/:id', async(req, res) => {
+
+    const { id } = req.params;
+    const result_close = await pool.query('SELECT *FROM asig_visitas WHERE id = ?', id);
+    res.render('personal/close', { close: result_close });
+});
+router.post('/close', async(req, res) => {
+
+    const { id } = req.params;
+    const result_close = await pool.query('SELECT *FROM asig_visitas WHERE id = ?', id);
+    res.render('personal/close', { close: result_close });
+});
+
+
+
+
+
+
+router.get('/verify/:id', async(req, res) => {
+    const { id } = req.params;
+    const result_verify = await pool.query('SELECT *FROM asig_visitas WHERE id = ?', id);
+    res.render('personal/verify', { verify: result_verify });
 });
 
 

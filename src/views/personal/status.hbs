@@ -1,10 +1,22 @@
-<div class="container p-4">
-    <div class="card mx-auto">
-        <div class="card-header">
-            
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Visitas pendientes</h5>
+{{#each control_visitas}}
+    <div class="container p-4">
+        <div class="card mx-auto">
+            <div class="card-header">
+                <h5 class="card-title">Cliente: <strong>{{fullname}}</strong></h5>
+                <h5 class="card-title">Número de visita: <strong>{{id}}</strong></h5>
+            </div>
+            <div class="card-body">
+                <em>Horario: <strong>{{horario_visita}}</strong></em>
+                <p class="card-text">{{motivo_visita}}</p>
+                <div class="container p-4">
+                    <em class="form-control">Solicitada: <strong>{{timeago fecha_visita}}</strong></em>
+                    <div class="box_btn">
+                        <a class="btn btn-success" href="/pers/close/{{id}}">Cerrar</a>
+                        <a class="btn btn-warning" href="/pers/verify/{{id}}">Verificar</a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
-</div>
+{{/each}}

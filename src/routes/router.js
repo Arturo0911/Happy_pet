@@ -93,12 +93,37 @@ router.get('/msn', (req, res) => {
 router.get('/visit', ItsLoggedIn, async(req, res) => {
     const horarios = await pool.query('SELECT * FROM horarios_visitas WHERE disponibilidad=1');
     const medicos = await pool.query(`SELECT * FROM employees WHERE apartment = 'Medico'`)
-
     res.render('routes/visit', { disponibilidad: horarios, personal_medico: medicos });
 });
 
-router.post('/visit', ItsLoggedIn, (req, res) => {
-    res.redirect('main/state');
+router.post('/visit', ItsLoggedIn, async(req, res) => {
+    const cuerpo = req.body;
+    const horario_id = await pool.query(`SELECT id FROM horarios_visitas WHERE rango = '${cuerpo.rango}' `);
+    console.log(': ', horario_id[0]);
+
+    const { id } = horario_id[0];
+    new_id = parseInt(id);
+    const medic_id = await pool.query(`SELECT id FROM employees WHERE name = '${cuerpo.medic}' `);
+    console.log('medico id: ', medic_id[0]);
+
+    const cuerpo_data = {
+        ced_cliente: req.body.ced,
+        fullname: req.body.fullname,
+        pet_name: req.body.pet_name,
+        email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
+        id_medico: medic_id[0].id,
+        fullname_medic: req.body.medic,
+        id_horario_visita: new_id,
+        horario_visita: req.body.rango,
+        motivo_visita: req.body.motivo_visita
+    };
+    await pool.query(`UPDATE horarios_visitas SET disponibilidad = ${0}  WHERE id = ${new_id}`);
+    await pool.query('INSERT INTO asig_visitas SET ?', [cuerpo_data]);
+
+    req.flash('success', 'Visita asignada correctamente');
+    res.redirect('/main/state');
     //res.render('routes/visit');
 });
 

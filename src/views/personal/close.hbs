@@ -1,0 +1,29 @@
+{{#each close}}
+    <div class="container p-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Cliente: <strong>{{fullname}}</strong></h5>
+                <h5 class="card-title">Número de visita: <strong>{{id}}</strong></h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Mascota: <strong>{{pet_name}}</strong></h5>
+                <p class="card-text">{{motivo_visita}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+                <p class="card-text">{{address}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="form_status">
+        <form action="" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <textarea class="form-control" name="status_comentarios" rows="10" placeholder="Indique el motivo por el cual cerrará la visita"></textarea>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Cerrar y guardar cambios</button>
+        </form>
+    </div>
+    
+{{/each}}

@@ -2,7 +2,7 @@
     <div class="container_visit">
         <h3>Solicitud de visitas a domicilio</h3>
         {{#if disponibilidad}}
-            <form action="/main/visit" method="POST" enctype="multipart/form-data">
+            <form action="/main/visit" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-10">
                         <label for="inputCedula">Cedula</label>
@@ -16,15 +16,6 @@
                         <label for="inputNombre">Nombre de la máscota</label>
                         <input required type="text" class="form-control" id="inputNombre" name="pet_name">
                     </div>
-
-                    <!--<div class="form-group col-md-5">
-                        <label for="inputFoto">Imagen</label>
-                        <div class="custom-file">
-                            <input required type="file" class="custom-file-input" id="inputGroupFile03"
-                                aria-describedby="inputGroupFileAddon03" name="image">
-                            <label class="custom-file-label" for="inputGroupFile03">Selecciona la imagen</label>
-                        </div>
-                    </div>-->
                     <div class="form-group col-md-4">
                         <label for="inputTelefono">Email</label>
                         <input required type="text" class="form-control" id="inputEmail4" name="email" name="email">
@@ -35,7 +26,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputApartment">Asignar médico</label>
-                        <select id="inputApartment" class="form-control" name="apartment">
+                        <select id="inputApartment" class="form-control" name="medic">
                             {{#each personal_medico}}
                                 <option selected>{{name}}</option>
                             {{/each}}
@@ -49,7 +40,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputAddress">Horarios dispobibles</label>
-                        <select id="inputApartment" class="form-control" name="apartment">
+                        <select id="inputApartment" class="form-control" name="rango">
                             {{#each disponibilidad}}
                                 <option selected>{{rango}}</option>
                             {{/each}}

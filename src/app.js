@@ -35,7 +35,8 @@ class App {
             defaultLayout: 'main',
             layoutsDir: path.join(this.app.get('views'), 'layout'),
             partialsDir: path.join(this.app.get('views'), 'partials'),
-            extname: '.hbs'
+            extname: '.hbs',
+            helpers: require('./lib/helpers')
         }));
         this.app.set('view engine', '.hbs');
         this.app.use('/public', express.static(path.join(__dirname, 'public')));
