@@ -73,14 +73,13 @@ class App {
             this.app.locals.user = req.user;
             next();
         })
-
-
     }
 
     routes() {
         this.app.use('/main', require('./routes/router'));
         this.app.use('/auth', require('./controllers/authentication'));
         this.app.use('/pers', require('./routes/personal'));
+        this.app.use('/stck', require('./routes/stock'));
     }
 
     /**

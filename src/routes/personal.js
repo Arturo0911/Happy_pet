@@ -43,10 +43,11 @@ router.get('/close/:id', async(req, res) => {
     res.render('personal/close', { close: result_close });
 });
 router.post('/close', async(req, res) => {
-
-    const { id } = req.params;
-    const result_close = await pool.query('SELECT *FROM asig_visitas WHERE id = ?', id);
-    res.render('personal/close', { close: result_close });
+    const cuerpo = req.body;
+    const id = parseInt(cuerpo.id);
+    await pool.query(`UPDATE asig_visitas set status_visita = ${0} WHERE id= ${id}`);
+    req.flash('warning', 'se cerró la visita a domicilio');
+    res.redirect('/main/');
 });
 
 

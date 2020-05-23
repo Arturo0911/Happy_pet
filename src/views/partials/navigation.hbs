@@ -51,8 +51,17 @@
 
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1">Stock</a>
+                <li class="nav-item dropdown" id="Items_dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Stock
+                    </a>
+                    <div id="Dropdown_links" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link " href="/stck/state" tabindex="-1">Estado de inventario</a>
+                        <a class="nav-link " href="/stck/add" tabindex="-1">Ingreso de productos</a>
+                        <a class="nav-link " href="/stck/pack_off" tabindex="-1">Despacho</a>
+
+                    </div>
                 </li>
                 <!--<li class="nav-item">
                     <a class="nav-link " href="/main/state" tabindex="-1">States</a>
@@ -63,9 +72,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="/main/visit" tabindex="-1">Request</a>
                 </li>-->
-                <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1">Others</a>
-                </li>
+                
 
                 <li class="nav-item">
                     <a class="btn btn-success" id="Button_click" href="#">Show</a>
