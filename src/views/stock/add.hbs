@@ -1,0 +1,101 @@
+<div class="container p-4">
+    <form action="/stck/add" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="inputNombre">Nombre del producto</label>
+                <input required type="text" class="form-control" id="inputNombre" name="name" autofocus>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputTypeFood">Tipo de alimento</label>
+                <select id="inputTypeFood" class="form-control" name="tipo_alimento">
+                    <option>Seco</option>
+                    <option>Humedo</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="InputRangePet">Rango de la mascota</label>
+                <select id="InputRangePet" class="form-control" name="rango_edad_mascota">
+                    <!--<option selected>Adultos (madianos y grandes)</option>
+                    <option>Adultos (minis y pequeños)</option>
+                    <option>cachorros (medianos y grandes)</option>
+                    <option>cachorros salud visible (minis y pequeños)</option>
+                    <option>Adultos (minis y pequeños) general</option>
+                    <option>Adultos 7+ </option>
+                    <option>Adultos control de peso, todos los tamaños</option>-->
+                </select>
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Manufacture_name">Nombre del fabricante</label>
+                <input required type="text" class="form-control" id="Manufacture_name" name="manufacturer_name"
+                    placeholder="Nombre del fabricante">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="inputFoto">Imagen</label>
+                <div class="custom-file">
+                    <input required type="file" class="custom-file-input" id="inputGroupFile03"
+                        aria-describedby="inputGroupFileAddon03" name="image">
+                    <label class="custom-file-label" for="inputGroupFile03">Selecciona la imagen</label>
+                </div>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="InputCreatedDate">Fecha de fabricación</label>
+                <input required type="date" class="form-control" id="InputCreatedDate" name="fecha_elaboracion">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="InputExpiredDate">Fecha de caducidad</label>
+                <input required type="date" class="form-control" id="InputExpiredDate" name="fecha_caducidad">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="ProductDescription">Descripcion del producto</label>
+                <textarea class="form-control" name="descripcion" id="ProductDescription" rows="10"
+                    placeholder="Descripcion del producto"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="ProductReset">Descripcion de los ingredientes</label>
+                <textarea class="form-control" name="ingredientes_nutricion" id="ProductReset" rows="10"
+                    placeholder="Descripcion de los ingredientes"></textarea>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="Inputproteinacrud">Proteína cruda min.</label>
+                <input required type="number" step="0.1" class="form-control" id="Inputproteinacrud" name="proteina_cruda_min">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="InputgrasaCruda">Grasa cruda min.</label>
+                <input required type="number" step="0.1" class="form-control" id="InputgrasaCruda" name="grasa_cruda_min">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="Inputfibramax">Fibra cruda máx.</label>
+                <input required type="number" step="0.1" class="form-control" id="Inputfibramax" name="fibra_cruda_max">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputhumedad">Humedad max.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputhumedad" name="humedad_max">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputCenizas">Cenizas max.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputCenizas" name="cenizas_max">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputCalciomin">Cálcio min.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputCalciomin" name="calcio_min">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputCalciomax">Cálcio max.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputCalciomax" name="calcio_max">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputFosforomin">Fósforo min.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputFosforomin" name="fosforo_min">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputFosforomax">Fósforo máx.</label>
+                <input required type="number" step="0.1" class="form-control" id="inputFosforomax" name="fosforo_max">
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-success">Agregar</button>
+
+    </form>
+</div>
+
+</div>
