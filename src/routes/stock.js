@@ -4,11 +4,12 @@ const pool = require('../connections/database');
 const { createRandomNumber } = require('../connections/password');
 const path = require('path');
 const fs = require('fs-extra');
+const { ItsLoggedIn, ItsNotLoggedIn } = require('../controllers/module');
 
-router.get('/add', (req, res) => {
+router.get('/add', ItsLoggedIn, (req, res) => {
     res.render('stock/add');
 });
-router.post('/add', async(req, res) => {
+router.post('/add', ItsLoggedIn, async(req, res) => {
 
     /**
      * files
@@ -45,15 +46,24 @@ router.post('/add', async(req, res) => {
     res.redirect('/stck/state');
 });
 
-router.get('/pack_off', (req, res) => {
+router.get('/pack_off', ItsLoggedIn, (req, res) => {
     res.render('stock/pack_off');
 });
 
 
-router.get('/state', async(req, res) => {
+router.get('/state', ItsLoggedIn, async(req, res) => {
     const states = await pool.query('SELECT * FROM stock');
     res.render('stock/state', { stocks: states });
 });
+
+
+router.get('/render/:id', async(req, res) => {
+    const { id } = req.params;
+    const product = await pool.query('SELECT * FROM stock WHERE id =?', [id]);
+    res.render('stock/render', { product_id: product });
+
+});
+
 
 
 module.exports = router;

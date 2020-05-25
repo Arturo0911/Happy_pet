@@ -80,6 +80,7 @@ class App {
         this.app.use('/auth', require('./controllers/authentication'));
         this.app.use('/pers', require('./routes/personal'));
         this.app.use('/stck', require('./routes/stock'));
+        this.app.use('/custom', require('./routes/customer'));
     }
 
     /**

@@ -43,9 +43,11 @@
 }
 
 #sidebar_content {
+    height: 100%;
     padding-left: 15px;
     margin-left: 0px;
     transition: all 500ms linear;
+    overflow: auto;
 }
 
 #sidebar_content.active {
@@ -189,4 +191,8 @@
 
 .form_status {
     margin-left: 125px;
+}
+
+.btn_place {
+    margin-left: 52px;
 }
