@@ -10,6 +10,8 @@ const morgan = require('morgan');
 const flash = require('connect-flash');
 const passport = require('passport');
 const Mysqlstore = require('express-mysql-session');
+
+
 /**
  * class place
  */
@@ -87,7 +89,14 @@ class App {
      * here we espcify whats port is setting to run our app
      */
     async Listening_port() {
-        await this.app.listen(this.app.get('port'));
+
+        const server = await this.app.listen(this.app.get('port'));
+        const SocketIO = require('socket.io');
+        const io = SocketIO(server);
+        io.on('connection', () => {
+            console.log('new connection');
+
+        });
     }
 }
 

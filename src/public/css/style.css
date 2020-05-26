@@ -194,5 +194,9 @@
 }
 
 .btn_place {
-    margin-left: 52px;
+    margin-left: 20px;
+}
+
+#card_product {
+    margin-bottom: 30px;
 }

@@ -1,0 +1,21 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each every_product}}
+            <div class="col-md-3">
+                <div class="card" id="card_product">
+                    <div class="card-header">
+                        <img src="../../public/img/profile_stock/{{foto}}" style="width: 18rem;">
+                    </div>
+                    <div class="card-body">
+                        <div class="btn_place">
+                            <a class="btn btn-success" href="/stck/render/{{id}}">Abrir</a>
+                            <a class="btn btn-primary" href="/stck/render/{{id}}">Solicitar</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+</div>
