@@ -7,4 +7,10 @@ router.get('/product', async(req, res) => {
     res.render('customer/product', { every_product: custom_product });
 });
 
+// to send messages outside the login
+router.get('/msn', (req, res) => {
+    res.render('routes/msn');
+});
+
+
 module.exports = router;

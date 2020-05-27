@@ -80,10 +80,7 @@ router.post('/edit', async(req, res) => {
 
 
 
-// to send messages outside the login
-router.get('/msn', (req, res) => {
-    res.render('routes/msn');
-});
+
 
 
 

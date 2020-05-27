@@ -21,7 +21,7 @@ const type_pet_seco = ['Adultos (madianos y grandes)', 'Adultos (minis y pequeñ
     'Adultos (minis y pequeños) general', 'Adultos 7+', 'Adultos control de peso, todos los tamaños'
 ];
 
-select.addEventListener('change', () => {
+select.addEventListener('change', function(e) {
     const seleccionado = $('#inputTypeFood').val();
     if (seleccionado === 'Humedo') {
         console.log(seleccionado);
@@ -42,5 +42,5 @@ select.addEventListener('change', () => {
         });
         $('#InputRangePet').html(html);
     }
-
+    e.preventDefault();
 });

@@ -89,12 +89,17 @@ class App {
      * here we espcify whats port is setting to run our app
      */
     async Listening_port() {
-
-        const server = await this.app.listen(this.app.get('port'));
-        const SocketIO = require('socket.io');
-        const io = SocketIO(server);
-        io.on('connection', () => {
-            console.log('new connection');
+        /**
+         * With socket io using services to simulate a chat between customer and worker
+         */
+        const server = await this.app.listen(this.app.get('port')); // instantiate the constant to listen function of app
+        const SocketIO = require('socket.io'); // after require socket.io
+        const io = SocketIO(server); // we create a new variable using the last constant created server
+        io.on('connection', (socket) => { // the name of the input must be exactly the same to show by console
+            //console.log('new connection', socket.id);
+            socket.on('chat:', (data) => { // con el socket.on.emit() enviamos a todos los que están conectados
+                io.sockets.emit('chat:', data);
+            });
 
         });
     }
