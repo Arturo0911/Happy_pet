@@ -83,6 +83,7 @@ class App {
         this.app.use('/pers', require('./routes/personal'));
         this.app.use('/stck', require('./routes/stock'));
         this.app.use('/custom', require('./routes/customer'));
+        this.app.use('/medical', require('./routes/medical'));
     }
 
     /**

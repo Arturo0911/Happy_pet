@@ -47,7 +47,6 @@
     padding-left: 15px;
     margin-left: 0px;
     transition: all 500ms linear;
-    overflow: auto;
 }
 
 #sidebar_content.active {
@@ -199,4 +198,16 @@
 
 #card_product {
     margin-bottom: 30px;
+}
+
+#title {
+    padding-left: 300px;
+}
+
+#title label {
+    font-size: 15px;
+}
+
+#medical_register label {
+    font-weight: bold;
 }
