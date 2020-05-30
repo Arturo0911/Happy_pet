@@ -1,12 +1,26 @@
 const express = require('express');
+const email = require('nodemailer');
 const router = express.Router();
 const { ItsLoggedIn, ItsNotLoggedIn } = require('../controllers/module');
 const pool = require('../connections/database');
 const path = require('path');
 const fs = require('fs-extra');
+const fs_ = require('fs');
 const { createRandomNumber } = require('../connections/password')
+const email_ = require('../email_server/email');
+const pdf = require('pdfkit');
 
-router.get('/', ItsLoggedIn, (req, res) => {
+
+router.get('/', ItsLoggedIn, async(req, res) => {
+    const datas = await pool.query(`SELECT * FROM clients WHERE id= ${1}`);
+    const doc = new pdf();
+    doc.pipe(fs_.createWriteStream(__dirname + '/pdf/ejemplo.pdf'));
+    doc.text(`este es un ejemplo generado ${datas[0].pet_name}`, {
+        align: 'center'
+    });
+    doc.end();
+    console.log('document was generated successfully');
+
     res.render('routes/index');
 });
 
@@ -124,11 +138,38 @@ router.post('/visit', ItsLoggedIn, async(req, res) => {
     //res.render('routes/visit');
 });
 
-/*router.get('/', ItsLoggedIn, (req, res) => {
-    res.render('routes/index');
+router.get('/email', (req, res) => {
+    res.render('routes/email');
 });
 
-router.get('/', ItsLoggedIn, (req, res) => {
+router.post('/email', (req, res) => {
+
+    const transporter = email.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'negreirosarturo@gmail.com',
+            pass: 'DreamOn1992'
+        }
+    });
+
+    const mail_options = {
+        from: 'negreirosarturo@gmail.com',
+        to: 'fjsamanez@hotmail.com',
+        subject: 'Hola favian',
+        text: 'Estoy probando la herramienta de node para enviar correos :v 5-0 '
+    };
+    transporter.sendMail(mail_options, (err, info) => {
+        if (err) {
+            console.log('error al enviar correo', err.code);
+        }
+    });
+});
+
+
+// test email function
+router.get('/test_email/:id', email_.MailToSend);
+
+/*router.get('/', ItsLoggedIn, (req, res) => {
     res.render('routes/index');
 });
 
