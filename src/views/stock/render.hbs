@@ -1,55 +1,89 @@
 <div class="container p-4">
     <div class="row">
         {{#each product_id}}
-            <div class="col-md-8">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">{{name}}</h2>
+
+
+                    <h5 class="card-title">{{rango_edad_mascota}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{descripcion}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <img class="card-img-top" src="../../public/img/profile_stock/{{foto}}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Undersite-->
+        <div class="container p-4">
+            
+        </div>
+        <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">{{name}}</h2>
-                        
-                        
-                        <h5 class="card-title">{{rango_edad_mascota}}</h5>
+                        <h2 class="card-title">Ingredientes y nutrición</h2>
                     </div>
                     <div class="card-body">
-                        <p class="card-text" >{{descripcion}}</p>
+                        <p class="card-text">{{ingredientes_nutricion}}</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <img class="card-img-top" src="../../public/img/profile_stock/{{foto}}" alt="Card image cap">
+                        <h5 class="card-title">ANÁLISIS GARANTIZADO</h5>
                     </div>
+                    
                     <div class="card-body">
-
+                        <table class="table table-dark">
+                           <tbody>
+                               <tr>
+                                   <td><strong>Proteína Cruda (mín.):</strong> </td>
+                                   <td>{{proteina_cruda_min}} %</td>
+                                   
+                               </tr>
+                               <tr>
+                                   <td> <strong> Grasa Cruda (mín):</strong></td>
+                                   <td>{{grasa_cruda_min}}	%</td>
+                               </tr>
+                               <tr>
+                                   <td> <strong>Fibra Cruda (máx.):	</strong> </td>
+                                   <td>{{fibra_cruda_max}}	%</td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Humedad (máx.):</strong></td>
+                                   <td>{{humedad_max}}	%	</td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Cenizas (máx.):	</strong></td>
+                                   <td>{{cenizas_max}}	%</td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Calcio (mín.- máx.):	</strong></td>
+                                   <td>{{calcio_min}} % - {{calcio_max}}	%</td>
+                               </tr>
+                               <tr>
+                                  <td><strong>Fósforo (mín.- máx.):</strong>	</td>
+                                  <td>{{fosforo_min}} % - {{fosforo_max}}	%</td>
+                               </tr>
+                           </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Undersite-->
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">{{name}}</h2>
-                        
-                        
-                        <h5 class="card-title">{{rango_edad_mascota}}</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text" >{{descripcion}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <img class="card-img-top" src="../../public/img/profile_stock/{{foto}}" alt="Card image cap">
-                    </div>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-            </div>
         {{/each}}
-        
+
     </div>
 </div>

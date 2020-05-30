@@ -201,7 +201,17 @@
 }
 
 #title {
-    padding-left: 300px;
+    padding-top: 5px;
+    margin-top: 25px;
+    border: 0.5px solid;
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-items: center;
+    text-align: center;
 }
 
 #title label {
@@ -210,4 +220,25 @@
 
 #medical_register label {
     font-weight: bold;
+}
+
+#InputHistorial {
+    width: 200px;
+}
+
+#InputHistorial option {
+    height: 20px;
+}
+
+#index {
+    width: 99, 5vw;
+    height: 100vh;
+}
+
+.Button_division a {
+    margin-top: 5px;
+}
+
+#container {
+    margin-top: 15px;
 }

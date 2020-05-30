@@ -1,0 +1,167 @@
+<div id="container_historial" class="container p-4">
+    <form id="medical_register" method="POST" action="">
+
+        <div id="form_row" class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="inputGeneral">DATOS DEL PACIENTE</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPetname">Nombre de la mascota</label>
+                <input id="inputPetname" class="form-control" required type="text" name="pet_name" placeholder="Nombre de la mascota">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputSex">Sexo</label>
+                <select id="inputSex" class="form-control" name="sexo" required >
+                    <option selected>Macho</option>
+                    <option>Hembra</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inpuColor">Color</label>
+                <input id="inpuColor" class="form-control" type="text" placeholder="color" required name="color">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEspecie">Especie</label>
+                <select id="inputEspecie" class="form-control"  name="especie">
+                    <option selected>Canina</option>
+                    <option>Felina</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPeso">Peso</label>
+                <input id="inputPeso" class="form-control" placeholder="peso" type="number" step="0.0001" name="peso">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputcicatrices">Especifique si presenta citatrices</label>
+                <input id="inputcicatrices" type="text" placeholder="especifique si presenta cicatrices" class="form-control" name="cicatrices">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputRaza">Raza</label>
+                <input id="inputRaza" class="form-control" placeholder="raza" type="text" name="raza">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputZootecnico">Fin zootecnico</label>
+                <input id="inputZootecnico" class="form-control" placeholder="FIN zootecnico" type="text" name="fin_zootecnico">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputstetic">Cirugias estetica</label>
+                <select id="inputstetic" class="form-control" name="cirugias_esteticas">
+                    <option selected>Si</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputAge">Edad</label>
+                <input id="inputAge" class="form-control" type="number" name="edad" placeholder="Edad">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputCondition">Condicion</label>
+                <input id="inputCondition" class="form-control" type="text" placeholder="condicion" name="condicion_corporal">
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="inputGeneral">DATOS DEL DUEÑO</label>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputOwnerName">Nombre</label>
+                <input id="inputOwnerName" class="form-control" type="text" placeholder="Nombre del dueño" name="owner_name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputProfession">Profesion</label>
+                <input id="inputcicatrices" type="text" class="form-control" placeholder="A que se dedica" name="profesion">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="inputAddress">Dirección</label>
+                <textarea id="inputAddress" class="form-control" rows="5" placeholder="Dirección" name="direccion"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="InputMotivo">MOTIVO DE LA CONSULTA</label>
+            </div>
+            <div class="form-group col-md-12">
+                <textarea id="InputMotivo" class="form-control" rows="5" placeholder="Motivo de la consulta" name="motivo_consulta"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="InputMotivo">DATOS MEDIOAMBIENTALES</label>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputnutrition">Nutrición</label>
+                <input id="inputnutrition" class="form-control" type="text" name="nutricion" placeholder="nutricion">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputOwnProducts">¿Consume nuetros productos?</label>
+                <select id="inputOwnProducts" class="form-control" name="nuestra_nutricion">
+                    <option selected>Si</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputStyle">Estilo de vida</label>
+                <input id="inputStyle" class="form-control" type="text" name="estilo_vida" placeholder="Estilo de vida de la mascota">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEnviroment">Entorno</label>
+                <textarea id="inputEnviroment" class="form-control" rows="2" placeholder="Entorno de la mascota" name="motivo_consulta"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="InputHistorial">POSEE HISTORIAL MÉDICO</label>
+            </div>
+            <div class="form-group col-md-5">
+               
+            </div>
+            <div class="form-group col-md-2">
+                <select id="InputHistorial" class="form-control" name="posee_historial">
+                    <option selected>Si</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="InputHistorial">CONSTNATES FISIOLÓGICAS</label>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputTemp">temperatura</label>
+                <input id="inputTemp" class="form-control" type="text" name="temperatura">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPulso">Pulso</label>
+                <input id="inputPulso" class="form-control" type="text" name="pulso">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputTiic">T II c</label>
+                <input id="inputTiic" class="form-control" type="text" name="T_II_c">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputStateHi">Estado de hidratación</label>
+                <input id="inputStateHi" class="form-control" type="text" name="estado_hidratacion">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputCardiaca">Frecuencia cardiáca</label>
+                <input id="inputCardiaca" class="form-control" type="text" name="frecuencia_cardiaca">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputRespir">Frecuencia respiratoria</label>
+                <input id="inputRespir" class="form-control" type="text" name="frecuencia_respiratoria">
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="title" class="form-group col-md-12">
+                <label for="InputHistorial">ANANMNESICOS</label>
+            </div>
+            <div class="form-group col-md-12">
+                <textarea id="InputMotivo" class="form-control" rows="5" name="ananmnesicos"></textarea>
+            </div>
+        </div>
+        <Button type="submit" class="btn btn-success">Agregar al historial</Button>
+    </form>
+</div>
