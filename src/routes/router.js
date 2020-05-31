@@ -5,17 +5,19 @@ const { ItsLoggedIn, ItsNotLoggedIn } = require('../controllers/module');
 const pool = require('../connections/database');
 const path = require('path');
 const fs = require('fs-extra');
-const fs_ = require('fs');
+const fs_ = require('fs'); //pdf
 const { createRandomNumber } = require('../connections/password')
 const email_ = require('../email_server/email');
-const pdf = require('pdfkit');
+const pdf = require('pdfkit'); // pdf
 
 
 router.get('/', ItsLoggedIn, async(req, res) => {
     const datas = await pool.query(`SELECT * FROM clients WHERE id= ${1}`);
     const doc = new pdf();
-    doc.pipe(fs_.createWriteStream(__dirname + '/pdf/ejemplo.pdf'));
-    doc.text(`este es un ejemplo generado ${datas[0].pet_name}`, {
+    const pdf_name = createRandomNumber();
+    doc.pipe(fs_.createWriteStream(__dirname + `/pdf/${pdf_name}.pdf`));
+    doc.text(`este es un ejemplo generado, el nombre de la mascota: ${datas[0].pet_name} y el nombre del dueño
+    ${datas[0].fullname}`, {
         align: 'center'
     });
     doc.end();
@@ -138,32 +140,7 @@ router.post('/visit', ItsLoggedIn, async(req, res) => {
     //res.render('routes/visit');
 });
 
-router.get('/email', (req, res) => {
-    res.render('routes/email');
-});
 
-router.post('/email', (req, res) => {
-
-    const transporter = email.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'negreirosarturo@gmail.com',
-            pass: 'DreamOn1992'
-        }
-    });
-
-    const mail_options = {
-        from: 'negreirosarturo@gmail.com',
-        to: 'fjsamanez@hotmail.com',
-        subject: 'Hola favian',
-        text: 'Estoy probando la herramienta de node para enviar correos :v 5-0 '
-    };
-    transporter.sendMail(mail_options, (err, info) => {
-        if (err) {
-            console.log('error al enviar correo', err.code);
-        }
-    });
-});
 
 
 // test email function
