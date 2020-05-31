@@ -11,16 +11,16 @@ const pdf = require('pdfkit'); // pdf
 
 
 router.get('/', ItsLoggedIn, async(req, res) => {
-    const datas = await pool.query(`SELECT * FROM clients WHERE id= ${1}`);
+    /*const datas = await pool.query(`SELECT * FROM clients WHERE id= ${1}`);
     const doc = new pdf();
     const pdf_name = createRandomNumber();
-    doc.pipe(fs_.createWriteStream(__dirname + `/pdf/${pdf_name}.pdf`));
+    doc.pipe(fs_.createWriteStream(path.join(__dirname, `../public/img/pdf/${pdf_name}.pdf`)));
     doc.text(`este es un ejemplo generado, el nombre de la mascota: ${datas[0].pet_name} y el nombre del dueño
     ${datas[0].fullname}`, {
         align: 'center'
     });
     doc.end();
-    console.log('document was generated successfully');
+    console.log('document was generated successfully');*/
 
     res.render('routes/index');
 });

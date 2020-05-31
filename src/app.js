@@ -10,6 +10,7 @@ const morgan = require('morgan');
 const flash = require('connect-flash');
 const passport = require('passport');
 const Mysqlstore = require('express-mysql-session');
+const pdf = require('pdfkit');
 
 
 /**
@@ -45,7 +46,9 @@ class App {
         this.app.use(multer({
             dest: path.join(__dirname, 'public/img/temp')
         }).single('image'));
-
+        /*this.app.use('.pdf', new pdf({
+            dest: path.join(__dirname, 'public/img/pdf')
+        }).extname('.pdf'));*/
 
     }
     middlewares() {
@@ -84,6 +87,7 @@ class App {
         this.app.use('/stck', require('./routes/stock'));
         this.app.use('/custom', require('./routes/customer'));
         this.app.use('/medical', require('./routes/medical'));
+        this.app.use('/bill', require('./routes/bill'));
     }
 
     /**
