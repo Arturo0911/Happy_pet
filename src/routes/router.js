@@ -6,8 +6,7 @@ const pool = require('../connections/database');
 const path = require('path');
 const fs = require('fs-extra');
 const fs_ = require('fs'); //pdf
-const { createRandomNumber } = require('../connections/password')
-const email_ = require('../email_server/email');
+const { createRandomNumber } = require('../connections/password');
 const pdf = require('pdfkit'); // pdf
 
 
@@ -140,11 +139,6 @@ router.post('/visit', ItsLoggedIn, async(req, res) => {
     //res.render('routes/visit');
 });
 
-
-
-
-// test email function
-router.get('/test_email/:id', email_.MailToSend);
 
 /*router.get('/', ItsLoggedIn, (req, res) => {
     res.render('routes/index');
