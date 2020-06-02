@@ -5,23 +5,45 @@ const { ItsLoggedIn, ItsNotLoggedIn } = require('../controllers/module');
 const pool = require('../connections/database');
 const path = require('path');
 const fs = require('fs-extra');
-const fs_ = require('fs'); //pdf
+//const fs_ = require('fs'); //pdf
 const { createRandomNumber } = require('../connections/password');
-const pdf = require('pdfkit'); // pdf
+//const pdf = require('pdfkit'); // pdf
+const { createInvoice } = require('../controllers/pdf');
 
 
 router.get('/', ItsLoggedIn, async(req, res) => {
-    /*const datas = await pool.query(`SELECT * FROM clients WHERE id= ${1}`);
-    const doc = new pdf();
-    const pdf_name = createRandomNumber();
-    doc.pipe(fs_.createWriteStream(path.join(__dirname, `../public/img/pdf/${pdf_name}.pdf`)));
-    doc.text(`este es un ejemplo generado, el nombre de la mascota: ${datas[0].pet_name} y el nombre del dueño
-    ${datas[0].fullname}`, {
-        align: 'center'
-    });
-    doc.end();
-    console.log('document was generated successfully');*/
 
+    const pdf_name = createRandomNumber();
+    const invoice = {
+        shipping: {
+            name: "John Doe",
+            address: "1234 Main Street",
+            city: "San Francisco",
+            state: "CA",
+            country: "US",
+            postal_code: 94111
+        },
+        items: [{
+                item: "TC 100",
+                description: "Toner Cartridge",
+                quantity: 2,
+                amount: 6000
+            },
+            {
+                item: "USB_EXT",
+                description: "USB Cable Extender",
+                quantity: 1,
+                amount: 2000
+            }
+        ],
+        subtotal: 8000,
+        paid: 0,
+        invoice_nr: 1234
+    };
+
+
+    createInvoice(invoice, pdf_name);
+    console.log('document was generated successfully');
     res.render('routes/index');
 });
 

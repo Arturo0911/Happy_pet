@@ -2,16 +2,45 @@
     <form action="">
         {{#each bill}}
             <div class="form-row">
-                <div class="form-group col md-6">
-                    <label for=""></label>
-                    <input class="form-control" type="text"  name="destinatario_name" readonly="readonly" value="{{fullname}}">
+                <div class="form-group col md-4">
+                    <label for="inputDestinity">Nombre del destinatario</label>
+                    <input id="inputDestinity" class="form-control" type="text" name="destinatario_name" readonly="readonly"
+                        value="{{fullname}}">
                 </div>
-                <div class="form-group col md-6">
-                    <label for=""></label>
-                    <input class="form-control" type="text"  name="destinatario_name" readonly="readonly" value="{{ced}}">
+                <div class="form-group col md-4">
+                    <label for="inputCed">Cedula</label>
+                    <input id="inputCed" class="form-control" type="text" name="destinatario_ced" readonly="readonly"
+                        value="{{ced}}">
+                </div>
+                <div class="form-group col md-4">
+                    <label for="inputDate">Fecha de emision</label>
+                    <input id="inputDate" class="form-control" type="date" name="fecha_emision">
                 </div>
             </div>
         {{/each}}
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="">Codigo</label>
+                <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Descripcion</label>
+                <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="">cantiddad</label>
+                <input class="form-control" type="number">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="">Precio/U</label>
+                <input class="form-control" type="number" step="0.0001">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="">Total</label>
+                <input class="form-control" type="number" step="0.0001">
+            </div>
+
+        </div>
         <button class="btn btn-success" type="submit">Generar Factura</button>
     </form>
 </div>
