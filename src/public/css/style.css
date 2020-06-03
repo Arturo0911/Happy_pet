@@ -252,3 +252,11 @@
 #container_buttons_pet img {
     margin-right: 10px;
 }
+
+#create_bill {
+    opacity: 0;
+}
+
+#create_bill.active {
+    opacity: 1;
+}

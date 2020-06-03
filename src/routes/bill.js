@@ -18,12 +18,16 @@ router.get('/index', async(req, res) => {
 router.get('/generate_bill/:id', async(req, res) => {
     const { id } = req.params;
     const bill = await pool.query('SELECT * FROM clients WHERE id=?', [id]);
-    res.render('bill/bill', { bill: bill });
+    const values_ = await pool.query('SELECT * FROM  codes_bills');
+    res.render('bill/bill', { bill: bill, services: values_ });
 });
 router.post('/generate_bill', (req, res) => {
     /**
      * first redirect pdf's files into sections bills
      */
+    const body_bill = req.body;
+    //console.log(body_bill);
+
     const pdf_name = createRandomNumber();
     /*const invoice = {
         shipping: {
@@ -55,7 +59,7 @@ router.post('/generate_bill', (req, res) => {
 
     //createInvoice(invoice, pdf_name);
     //console.log('bill was generated successfully');
-    res.redirect('/bill/bill');
+    res.redirect('/main/state');
 });
 
 module.exports = router;

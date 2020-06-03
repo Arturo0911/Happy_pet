@@ -1,5 +1,5 @@
 <div class="container p-4">
-    <form action="">
+    <form id="form_bill" action="/bill/generate_bill" method="POST">
         {{#each bill}}
             <div class="form-row">
                 <div class="form-group col md-4">
@@ -18,29 +18,53 @@
                 </div>
             </div>
         {{/each}}
+        
         <div class="form-row">
             <div class="form-group col-md-3">
-                <label for="">Codigo</label>
-                <input class="form-control" type="text">
+                <label for="inputCode">Codigo</label>
+                <select id="inputCode" class="form-control" name="code">
+                    {{#each services}}
+                        <option>{{code}}</option>
+                    {{/each}}
+                </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="">Descripcion</label>
-                <input class="form-control" type="text">
+                <label for="inputDescription">Descripcion</label>
+                <select id="inputDescription" class="form-control" name="code_name"></select>
             </div>
             <div class="form-group col-md-1">
-                <label for="">cantiddad</label>
-                <input class="form-control" type="number">
+                <label for="InputCuantity">cantiddad</label>
+                <input id="InputCuantity" class="form-control" type="number">
             </div>
             <div class="form-group col-md-1">
-                <label for="">Precio/U</label>
-                <input class="form-control" type="number" step="0.0001">
+                <label for="InputPrecio">Precio/U</label>
+                <select id="InputPrecio" class="form-control" name="cost_service">
+                   
+                </select>
             </div>
             <div class="form-group col-md-1">
-                <label for="">Total</label>
-                <input class="form-control" type="number" step="0.0001">
+                <label for="inputTotal">Total</label>
+                <input id="inputTotal" readonly="readonly" name="total_service" class="form-control" type="number" step="0.0001">
             </div>
 
         </div>
-        <button class="btn btn-success" type="submit">Generar Factura</button>
+        <div id="create_bill" class="form-row">
+            <table class="table">
+                <thead class="dark">
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripcion</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_">
+                    
+                </tbody>
+            </table>
+        </div>
+        <button id="Add_bill" class="btn btn-warning" type="button">Agregar más valores</button>
+        <button id="Btn_bill" class="btn btn-success" type="submit">Generar Factura</button>
     </form>
 </div>
