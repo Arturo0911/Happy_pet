@@ -103,11 +103,11 @@ Add_bill.addEventListener('click', (evento) => {
         carrito.forEach(Element => {
             innerHtml += `
             <tr>
-                <td>${Element.codigo}</td>
-                <td>${Element.description}</td>
-                <td>${Element.cantidad}</td>
-                <td>${Element.precio_unity}</td>
-                <td>${Element.Total}</td>
+                <td><input class="form-control" readonly="readonly" name="code" value= ${Element.codigo}></td>
+                <td><input class="form-control" readonly="readonly" name="code_name" value=${Element.description}></td>
+                <td><input class="form-control" readonly="readonly" name="cantidad" value=${Element.cantidad}></td>
+                <td><input class="form-control" readonly="readonly" name="precio_unity" value=${Element.precio_unity}></td>
+                <td><input class="form-control" readonly="readonly" name="Total" value=${Element.Total}></td>
             </tr>
             `;
         });

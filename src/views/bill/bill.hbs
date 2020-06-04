@@ -2,19 +2,25 @@
     <form id="form_bill" action="/bill/generate_bill" method="POST">
         {{#each bill}}
             <div class="form-row">
-                <div class="form-group col md-4">
-                    <label for="inputDestinity">Nombre del destinatario</label>
-                    <input id="inputDestinity" class="form-control" type="text" name="destinatario_name" readonly="readonly"
-                        value="{{fullname}}">
-                </div>
-                <div class="form-group col md-4">
+                <div class="form-group col md-2">
                     <label for="inputCed">Cedula</label>
                     <input id="inputCed" class="form-control" type="text" name="destinatario_ced" readonly="readonly"
                         value="{{ced}}">
                 </div>
+                <div class="form-group col md-3">
+                    <label for="inputDestinity">Nombre del destinatario</label>
+                    <input id="inputDestinity" class="form-control" type="text" name="destinatario_name" readonly="readonly"
+                        value="{{fullname}}">
+                </div>
+                
                 <div class="form-group col md-4">
                     <label for="inputDate">Fecha de emision</label>
                     <input id="inputDate" class="form-control" type="date" name="fecha_emision">
+                </div>
+                <div class="form-group col md-3">
+                    <label for="inputDate">Direccion</label>
+                    <input id="inputDate" class="form-control" name="address" readonly="readonly" type="text" name="fecha_emision"
+                        value="{{address}}">
                 </div>
             </div>
         {{/each}}
