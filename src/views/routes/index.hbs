@@ -1,8 +1,56 @@
-<!--<div class="sidebar">
-    <ul>
-        <li>Profile</li>
-        <li>Messages</li>
-        <li>Stock</li>
-        <li>Agend</li>
-    </ul>
-</div>-->
+<div class="container p-4">
+    <div>
+        <table class="table">
+            <h5 id="titulo_tabla" class="card-title">Tareas pendientes</h5>
+            <thead>
+                <tr>
+                    <th scope="col">Número de caso</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each Cantidad_clients}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{fullname}}</td>
+                        <td>{{address}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{estado_consulta}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container p-4">
+    <div>
+        <table class="table">
+            <h5 id="titulo_tabla" class="card-title">Catálogo de alimentos</h5>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Tipo de alimento</th>
+                    <th scope="col">Rango de edad de la mascota</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Fecha elaboración</th>
+                    <th scope="col">Fecha de caducidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each Stok_data}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{tipo_alimento}}</td>
+                        <td>{{rango_edad_mascota}}</td>
+                        <td>{{cantidad}}</td>
+                        <td>{{fecha_elaboracion}}</td>
+                        <td>{{fecha_caducidad}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -12,39 +12,13 @@ const { createInvoice } = require('../controllers/pdf');
 
 
 router.get('/', ItsLoggedIn, async(req, res) => {
-
-    const pdf_name = createRandomNumber();
-    const invoice = {
-        shipping: {
-            name: "John Doe",
-            address: "1234 Main Street",
-            city: "San Francisco",
-            state: "CA",
-            country: "US",
-            postal_code: 94111
-        },
-        items: [{
-                item: "TC 100",
-                description: "Toner Cartridge",
-                quantity: 2,
-                amount: 6000
-            },
-            {
-                item: "USB_EXT",
-                description: "USB Cable Extender",
-                quantity: 1,
-                amount: 2000
-            }
-        ],
-        subtotal: 8000,
-        paid: 0,
-        invoice_nr: 1234
-    };
+    const rows_count = await pool.query('SELECT * FROM clients');
+    const rows_stock = await pool.query('SELECT * FROM stock ORDER BY id');
+    //console.log(rows_count);
+    //const conteo_ = rows_count.length;
+    res.render('routes/index', { Cantidad_clients: rows_count, Stok_data: rows_stock });
 
 
-    createInvoice(invoice, pdf_name);
-    console.log('document was generated successfully');
-    res.render('routes/index');
 });
 
 router.get('/logger', (req, res) => {

@@ -59,11 +59,11 @@ passport.use('local_login', new LocalStrategy({
 
 
 
-router.get('/signup', (req, res) => {
+router.get('/signup', ItsLoggedIn, (req, res) => {
     res.render('aut/signup');
 });
 
-router.post('/signup', passport.authenticate('local_signup', {
+router.post('/signup', ItsLoggedIn, passport.authenticate('local_signup', {
     successRedirect: '/auth/login',
     failureRedirect: '/auth/signup',
     failureFlash: true

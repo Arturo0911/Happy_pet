@@ -46,7 +46,9 @@ Bill_.create = async(req, res) => {
      * to create the subtotal
      */
     for (let i = 0; i < longitud; i++) {
-
+        /**
+         * by this method we're pushing any objects elements into array
+         */
         array_bill.push({
             'item': code_[i],
             'description': code_name_[i],
@@ -73,8 +75,8 @@ Bill_.create = async(req, res) => {
         },
         items: array_bill,
         subtotal: suma,
-        paid: 'wherever',
-        invoice_nr: '12345'
+        paid: 0,
+        invoice_nr: 12345
     };
     console.log('invoice=>: ', invoice);
     createInvoice(invoice, pdf_name);
