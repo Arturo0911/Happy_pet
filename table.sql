@@ -1,16 +1,16 @@
 create table employees (
 	id int(11) PRIMARY KEY auto_increment,
-    	ced varchar(20) not null,
-    	name varchar(30) not null,
-    	lname varchar(40) not null,
-    	image varchar(50) not null,
-    	email varchar(30) not null,
-     	address varchar(50) not null,
-    	phone varchar(50) not null,
-    	apartment varchar(20) not null,
-    	turno varchar(20) not null,
-    	user varchar(20) not null,
-    	password varchar(150) not null);
+	ced varchar(20) not null,
+	name varchar(30) not null,
+	lname varchar(40) not null,
+	image varchar(50) not null,
+	email varchar(30) not null,
+	address varchar(50) not null,
+	phone varchar(50) not null,
+	apartment varchar(20) not null,
+	turno varchar(20) not null,
+	user varchar(20) not null,
+	password varchar(150) not null);
 
 
 create table clients (
@@ -36,21 +36,19 @@ create table horarios_visitas (
 create table asig_visitas (
 
 	visita_id int(11) PRIMARY KEY auto_increment,
-	ced_cliente 
-	fullname 
-	pet_name 
-	email 
-	phone 
-	address 
-	id_medico 
-	fullname_medic 
-	id_horario_visita 
-	horario_visita 
-	motivo_visita ,
-
-	FOREIGN KEY(id_horario_visita) REFERENCES horarios_visitas(horario_id)
-
-
+	ced_cliente varchar(20) not null,
+	fullname varchar(30) not null,
+	pet_name varchar(30) not null,
+	email varchar(30) not null,
+	phone varchar(30) not null,
+	address varchar(20) not null,
+	id_medico int,
+	fullname_medic varchar(40) not null,
+	id_horario_visita int,
+	horario_visita varchar(30) not null,
+	motivo_visita varchar(500) not null,
+	FOREIGN KEY(id_horario_visita) REFERENCES horarios_visitas(horario_id),
+	FOREIGN KEY (id_medico) REFERENCES employees (id)
 );
 
 
