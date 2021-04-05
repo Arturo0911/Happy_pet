@@ -5,9 +5,7 @@ const { ItsLoggedIn, ItsNotLoggedIn } = require('../controllers/module');
 const pool = require('../connections/database');
 const path = require('path');
 const fs = require('fs-extra');
-//const fs_ = require('fs'); //pdf
 const { createRandomNumber } = require('../connections/password');
-//const pdf = require('pdfkit'); // pdf
 const { createInvoice } = require('../controllers/pdf');
 
 
@@ -21,11 +19,11 @@ router.get('/', ItsLoggedIn, async(req, res) => {
 
 });
 
-router.get('/logger', (req, res) => {
+router.get('/logger', ItsLoggedIn, (req, res) => {
     res.render('routes/logger');
 });
 
-router.post('/logger', async(req, res) => {
+router.post('/logger', ItsLoggedIn, async(req, res) => {
 
     const file_name = createRandomNumber();
     const old_path = req.file.path;
@@ -135,14 +133,6 @@ router.post('/visit', ItsLoggedIn, async(req, res) => {
     //res.render('routes/visit');
 });
 
-
-/*router.get('/', ItsLoggedIn, (req, res) => {
-    res.render('routes/index');
-});
-
-router.get('/', ItsLoggedIn, (req, res) => {
-    res.render('routes/index');
-});*/
 
 
 module.exports = router;

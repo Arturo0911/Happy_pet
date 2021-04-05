@@ -54,10 +54,11 @@ create table asig_visitas (
 
 
 create table stock (
+	id int(11) PRIMARY KEY auto_increment,
 	name varchar(30) not null,
 	manufacturer_name varchar(30) not null,
 	tipo_alimento varchar(30) not null,
-	rango_edad_mascota int,
+	rango_edad_mascota varchar(50) not null,
 	foto varchar(30) not null,
 	descripcion varchar(400) not null,
 	ingredientes_nutricion varchar(30) not null,
@@ -72,4 +73,14 @@ create table stock (
 	fosforo_max decimal(13,4),
 	fecha_elaboracion datetime,
 	fecha_caducidad datetime
+);
+
+
+
+create table codes_bills (
+
+	id int(11) PRIMARY KEY auto_increment,
+	
+
+
 );
